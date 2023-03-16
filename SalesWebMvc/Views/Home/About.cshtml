@@ -1,7 +1,16 @@
-﻿@{
+﻿@{ //bloco de código c#
     ViewData["Title"] = "About";
+    ViewData["Information"] = "EducandoWeb.com";
 }
 <h2>@ViewData["Title"]</h2>
 <h3>@ViewData["Message"]</h3>
 
-<p>Use this area to provide additional information.</p>
+
+<p>Professor @ViewData["Professor"]</p>
+<p>@ViewData["email"]</p>
+
+<address>
+    <strong>
+        More information : <a>@ViewData["Information"]</a> 
+    </strong>
+</address>

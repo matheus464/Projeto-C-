@@ -15,9 +15,10 @@ namespace SalesWebMvc.Controllers
             return View();
         }
 
-        public IActionResult About()
+        public IActionResult About()// referencia a view necessária conforme nome do metódo etc
         {
-            ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = "Sales Web MVC App from c# course."; // Objeto["Chave"] = valor 
+            ViewData["Professor"] = "Nelio Alves";
 
             return View();
         }
@@ -35,7 +36,7 @@ namespace SalesWebMvc.Controllers
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        public IActionResult Error() //IActionResult = resultado de uma ação
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }

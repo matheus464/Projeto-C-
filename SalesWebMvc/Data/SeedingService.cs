@@ -6,7 +6,7 @@ using SalesWebMvc.Models;
 
 namespace SalesWebMvc.Data
 {
-    public class SeedingService
+    public class SeedingService // classe para popular o banco de dados
     {
         private SalesWebMvcContext _context;
 

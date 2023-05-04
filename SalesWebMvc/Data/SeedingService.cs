@@ -38,13 +38,13 @@ namespace SalesWebMvc.Data
             SalesRecord sr2 = new SalesRecord(2, new DateTime(2023, 4, 26), 2000.0, Models.Enums.SaleStatus.Biled, s2);
             SalesRecord sr3 = new SalesRecord(3, new DateTime(2023, 4, 26), 3000.0, Models.Enums.SaleStatus.Biled, s3);
 
-            _context.Department.AddRange(d1, d2, d3, d4);
+            _context.Department.AddRange(d1, d2, d3, d4); // AddRange() metodo pra adicionar na tabela os atributos
 
             _context.Seller.AddRange(s1, s2, s3, s4, s5, s6);
 
             _context.SalesRecords.AddRange(sr1, sr2, sr3);
 
-            _context.SaveChanges();
+            _context.SaveChanges(); //SaveChange() metodo pra salvar
         }
     }
 }

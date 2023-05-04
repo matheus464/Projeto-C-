@@ -14,7 +14,7 @@ namespace SalesWebMvc.Models
         public double BaseSalary { get; set; }
         public DateTime BirthDate { get; set; }
 
-        public Department department { get; set; }
+        public Department Department { get; set; }
         public ICollection<SalesRecord> SalesRecords { get; set; } = new List<SalesRecord>();
 
         public Seller() 
@@ -29,7 +29,7 @@ namespace SalesWebMvc.Models
             Email = email;
             BaseSalary = baseSalary;
             BirthDate = birthDate;
-            this.department = department;
+            this.Department = department;
         }
 
         public void AddSales(SalesRecord sr) 

@@ -7,7 +7,6 @@ namespace SalesWebMvc.Models.ViewModels//serve pra montar um objeto do tipo sell
     public class SellerFormViewModel
     {
         public Seller Seller { get; set; }
-        public List<Department> Departments { get; set; }
        
     }
 }

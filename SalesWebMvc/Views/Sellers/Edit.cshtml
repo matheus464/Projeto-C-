@@ -10,9 +10,8 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-
-        <form asp-action="Edit">
-            <input type="hidden" asp-for="Seller.Id"/>
+        <form asp-action="Edit"><!--Get-->
+            <input type="hidden" asp-for="Seller.Id" />
             <div class="form-group">
                 <label asp-for="Seller.Name" class="control-label"></label>
                 <input asp-for="Seller.Name" class="form-control" />
@@ -30,7 +29,8 @@
                 <input asp-for="Seller.BaseSalary" class="form-control" />
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" id="Edit" value="Save" class="btn btn-danger" /><!--Post-->
+                <a asp-action="Index" class="btn btn-warning">Back To List</a>
             </div>
         </form>
     </div>

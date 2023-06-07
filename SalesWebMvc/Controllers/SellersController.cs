@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using SalesWebMvc.Services;
+using SalesWebMvc.Services.Exceptions;
 using SalesWebMvc.Models;
+using SalesWebMvc.Models.ViewModels;
 
 namespace SalesWebMvc.Controllers
 {
@@ -72,6 +74,30 @@ namespace SalesWebMvc.Controllers
                 return NotFound();
             }
             return View(obj);
+        }
+
+        [HttpGet]
+        public IActionResult Edit(int? id) 
+        {
+            if (id == null) 
+            {
+                throw new NotFoundException("Id not Found");
+            }
+            var obj = _sellerService.FindById(id.Value);
+            if (obj == null) 
+            {
+                throw new NotFoundException("Seller not Found");
+            }
+
+            SellerFormViewModel vm = new SellerFormViewModel() { Seller = obj};
+            return View(vm);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Seller seller) 
+        {
+            _sellerService.Update(seller);
+            return RedirectToAction(nameof(Index));
         }
     }
 }
